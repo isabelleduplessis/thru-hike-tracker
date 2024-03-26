@@ -1,43 +1,43 @@
-Section,Town,Mile
-Southern California,Campo/Mexican Border,0.0
-Southern California,Julian,77.0
-Southern California,Warner Springs,109.5
-Southern California,Anza,151.9
-Southern California,Idyllwild,179.4
-Southern California,Cabazon,209.5
-Southern California,Big Bear,266.1
-Southern California,Cajon Junction,342.0
-Southern California,Wrightwood,369.4
-Southern California,Agua Dulce,454.5
-Southern California,Hikertown,517.6
-Southern California,Tehachapi,566.4
-Southern California,Ridgecrest,653.2
-Sierra Nevada,Kennedy Meadows South,703.4
-Sierra Nevada,Lone Pine,745.7
-Sierra Nevada,Independence,790.3
-Sierra Nevada,Bishop,832.2
-Sierra Nevada,Mammoth Lakes,907.8
-Sierra Nevada,Tuolumne Meadows,943.7
-Sierra Nevada,Kennedy Meadows North,1018.1
-Northern California,South Lake Tahoe,1093.4
-Northern California,Truckee,1154.6
-Northern California,Sierra City,1196.6
-Northern California,Quincy,1269.1
-Northern California,Chester,1332.3
-Northern California,Burney,1412.3
-Northern California,Dunsmuir,1502.2
-Northern California,Etna,1600.7
-Northern California,Seiad Valley,1656.9
-Oregon,Ashland,1719.7
-Oregon,Crater Lake/Mazama Village,1822.7
-Oregon,Shelter Cove Resort,1907.6
-Oregon,Bend,1984.7
-Oregon,Timberline Lodge,2099.6
-Oregon,Cascade Locks/Portland,2155.0
-Washington,Trout Lake,2231.5
-Washington,White Pass,2297.5
-Washington,Snoqualmie Pass,2395.7
-Washington,Stevens Pass/Leavenworth,2466.7
-Washington,Stehekin,2574.5
-Washington,Mazama,2593.8
-Washington,Monument 78/Canadian Border,2652.6
+Section,Town,Mile,Trail
+Southern California,Campo/Mexican Border,0.0,Pacific Crest Trail
+Southern California,Julian,77.0,Pacific Crest Trail
+Southern California,Warner Springs,109.5,Pacific Crest Trail
+Southern California,Anza,151.9,Pacific Crest Trail
+Southern California,Idyllwild,179.4,Pacific Crest Trail
+Southern California,Cabazon,209.5,Pacific Crest Trail
+Southern California,Big Bear,266.1,Pacific Crest Trail
+Southern California,Cajon Junction,342.0,Pacific Crest Trail
+Southern California,Wrightwood,369.4,Pacific Crest Trail
+Southern California,Agua Dulce,454.5,Pacific Crest Trail
+Southern California,Hikertown,517.6,Pacific Crest Trail
+Southern California,Tehachapi,566.4,Pacific Crest Trail
+Southern California,Ridgecrest,653.2,Pacific Crest Trail
+Southern California,Kennedy Meadows South,703.4,Pacific Crest Trail
+Sierra Nevada,Lone Pine,745.7,Pacific Crest Trail
+Sierra Nevada,Independence,790.3,Pacific Crest Trail
+Sierra Nevada,Bishop,832.2,Pacific Crest Trail
+Sierra Nevada,Mammoth Lakes,907.8,Pacific Crest Trail
+Sierra Nevada,Tuolumne Meadows,943.7,Pacific Crest Trail
+Sierra Nevada,Kennedy Meadows North,1018.1,Pacific Crest Trail
+Sierra Nevada,South Lake Tahoe,1093.4,Pacific Crest Trail
+Northern California,Truckee,1154.6,Pacific Crest Trail
+Northern California,Sierra City,1196.6,Pacific Crest Trail
+Northern California,Quincy,1269.1,Pacific Crest Trail
+Northern California,Chester,1332.3,Pacific Crest Trail
+Northern California,Burney,1412.3,Pacific Crest Trail
+Northern California,Dunsmuir,1502.2,Pacific Crest Trail
+Northern California,Etna,1600.7,Pacific Crest Trail
+Northern California,Seiad Valley,1656.9,Pacific Crest Trail
+Northern California,Ashland,1719.7,Pacific Crest Trail
+Oregon,Crater Lake/Mazama Village,1822.7,Pacific Crest Trail
+Oregon,Shelter Cove Resort,1907.6,Pacific Crest Trail
+Oregon,Bend,1984.7,Pacific Crest Trail
+Oregon,Timberline Lodge,2099.6,Pacific Crest Trail
+Oregon,Cascade Locks/Portland,2155.0,Pacific Crest Trail
+Washington,Trout Lake,2231.5,Pacific Crest Trail
+Washington,White Pass,2297.5,Pacific Crest Trail
+Washington,Snoqualmie Pass,2395.7,Pacific Crest Trail
+Washington,Stevens Pass/Leavenworth,2466.7,Pacific Crest Trail
+Washington,Stehekin,2574.5,Pacific Crest Trail
+Washington,Mazama,2593.8,Pacific Crest Trail
+Washington,Monument 78/Canadian Border,2652.6,Pacific Crest Trail
