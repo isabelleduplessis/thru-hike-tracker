@@ -1,13 +1,10 @@
 Section,Town,Mile,Trail
 First 100,Waterton Canyon,0.0,Colorado Trail
-First 100,Bailey,37.1,Colorado Trail
-First 100,Fairplay,68.6,Colorado Trail
 First 100,Breckenridge,104,Colorado Trail
 Breck to Twin Lakes,Copper,116.2,Colorado Trail
-Breck to Twin Lakes,Leadville,140.9,Colorado Trail
-Breck to Twin Lakes,Twin Lakes,183,Colorado Trail
-Collegiate West,Buena Vista,208.8,Colorado Trail
-Collegiate West,Salida,250.4,Colorado Trail
-Cow Flats,Lake City,359,Colorado Trail
-San Juans,Silverton,414.6,Colorado Trail
-San Juans,Durango,484.6,Colorado Trail
+Breck to Twin Lakes,Leadville,142.7,Colorado Trail
+Breck to Twin Lakes,Twin Lakes,177.5,Colorado Trail
+Collegiate West,Salida,261.6,Colorado Trail
+Cow Flats,Lake City,362.9,Colorado Trail
+San Juans,Silverton,418.2,Colorado Trail
+San Juans,Durango,491.5,Colorado Trail

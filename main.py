@@ -1,8 +1,9 @@
 import streamlit as st
+import pandas as pd
 from helpers import percent_completed
 from helpers import format_date
 from helpers import get_date_today
-from datetime import date
+import datetime
 
 st.set_page_config(page_title="Thru-Hike Tracker")
 
@@ -12,6 +13,10 @@ st.set_page_config(page_title="Thru-Hike Tracker")
 
 trail_options = ["Colorado Trail", "Pacific Crest Trail"] # have it get unique trail names from trail data folder
 current_mile = 50
+
+hiker_data = pd.read_csv("sample_hiker_data.csv")
+start_date = datetime.date(hiker_data["Year"].iloc[0], hiker_data["Month"].iloc[0], hiker_data["Day"].iloc[0])
+last_date = datetime.date(hiker_data["Year"].iloc[-1], hiker_data["Month"].iloc[-1], hiker_data["Day"].iloc[-1])
 
 def update_data(trail_selection):
         if trail_selection == "Pacific Crest Trail":
@@ -38,8 +43,9 @@ def main():
 
         # Date information
         st.write("Today is ",format_date(get_date_today()))
-        st.write("Last update from Isabelle: ")
-        st.slider("Day", date(23, 7, 2), date(23, 8, 2), format="MM/DD/YY")
+        st.write("Last update from Isabelle: ", format_date(last_date))
+        selected_date = st.slider("Day", 1, (last_date - start_date).days+1)
+        st.write(format_date(start_date - pd.to_timedelta(1, unit='D') + pd.to_timedelta(selected_date, unit='D')))
 
         # Initialize df session state variable
         if 'df' not in st.session_state:
