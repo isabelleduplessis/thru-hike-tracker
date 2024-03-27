@@ -1,32 +1,73 @@
+import streamlit as st
 import pandas as pd
 import datetime
 from datetime import date
 import glob
 
+def update_trail_data(user_name, trail_selection):
+        trail_names = get_trail_names(user_name)
+        trail_filenames = get_trail_filenames(user_name)
+        index = trail_names.index(trail_selection)
+        trail_data = trail_filenames[index]
+        # Once trail has been selected, load hiker data
+        hiker_data = load_hiker_data(user_name, trail_selection)
+        # Set start date based on first entry
+        start_date = hiker_data["Date"].iloc[0]
+        # Set updated values based on last entry
+        current_mile = hiker_data["Mile"].iloc[-1]
+        last_date = hiker_data["Date"].iloc[-1]
+        st.session_state.df = percent_completed(current_mile, trail_data)
+        st.session_state.hiker_data = hiker_data
 
 ### LOADING DATA ###
-def load_hiker_data():
+
+def get_trail_names(user_name): # Get the trails that a user has data on to select which trail data to view
+        dir_name = user_name + "/*.csv"
+        user_files = glob.glob(dir_name) # Locate directory that belongs to the user
+        trail_names = []
+        #trail_filenames = []
+        for file in user_files:
+                df = pd.read_csv(file)
+                trail_names.append(df["Trail"].iloc[0])
+        return trail_names
+
+def get_trail_filenames(user_name):
+        trail_filenames = []
+        for trail in get_trail_names(user_name):
+                for file in glob.glob("trail_data/*.csv"):
+                        df = pd.read_csv(file)
+                        if trail == df["Trail"].iloc[0]:
+                                trail_filenames.append(file)
+        return trail_filenames
+
+
+def load_hiker_data(user_name, trail_name): # Use load_hiker_data("sample_hiker_data", "Colorado Trail")
         # Read in user data
-        hiker_data = pd.read_csv("sample_hiker_data.csv")
+        dir_name = user_name + "/*.csv"
+        user_files = glob.glob(dir_name) # Locate directory that belongs to the user
+        for file in user_files:
+                df = pd.read_csv(file)
+                if df["Trail"].iloc[0] == trail_name:
+                        hiker_data = df
         # Create column with datetime values
         hiker_data.insert(7, "Date", pd.to_datetime(hiker_data[["Year", "Month", "Day"]]))
         # TODO: sort by date and remove redundant columns
         return hiker_data
 
-def get_trail_options():
-        # Read in all files in trail_data to get list of trails as options for the selectbox
-        trail_files = glob.glob("trail_data/*.csv")
 
+# Will only be used in hiker input file
+def get_trail_options(): # Get the trails that exist in the system to allow the hiker to choose from
+        #Read in all files in trail_data to get list of trails as options for the selectbox
+        trail_files = glob.glob("trail_data/*.csv")
         # Create empty lists
         trail_names = []
-        trail_filenames = []
-
+        #trail_filenames = []
         # Add each trail name and file name to lists
         for file in trail_files:
                 df = pd.read_csv(file)
-                trail_names.append(df.iloc[0,-1])
-                trail_filenames.append(file)
-        return [trail_names, trail_filenames]
+                trail_names.append(df["Trail"].iloc[0])
+                #trail_filenames.append(file)
+        return trail_names
 
 ### DATES ###
 
