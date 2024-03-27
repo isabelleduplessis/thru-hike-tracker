@@ -1,2 +1,6 @@
 streamlit
+streamlit-authenticator
+glob2
 pandas
+
+
