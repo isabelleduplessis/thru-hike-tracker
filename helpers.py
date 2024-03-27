@@ -1,37 +1,46 @@
 import pandas as pd
 import datetime
 from datetime import date
+import glob
+
+
+### LOADING DATA ###
+def load_hiker_data():
+        # Read in user data
+        hiker_data = pd.read_csv("sample_hiker_data.csv")
+        # Create column with datetime values
+        hiker_data.insert(7, "Date", pd.to_datetime(hiker_data[["Year", "Month", "Day"]]))
+        # TODO: sort by date and remove redundant columns
+        return hiker_data
+
+def get_trail_options():
+        # Read in all files in trail_data to get list of trails as options for the selectbox
+        trail_files = glob.glob("trail_data/*.csv")
+
+        # Create empty lists
+        trail_names = []
+        trail_filenames = []
+
+        # Add each trail name and file name to lists
+        for file in trail_files:
+                df = pd.read_csv(file)
+                trail_names.append(df.iloc[0,-1])
+                trail_filenames.append(file)
+        return [trail_names, trail_filenames]
 
 ### DATES ###
-
-# Function to get date from entered year, month, ada
-def get_date_from_entry(year, month, day):
-        x = date(year, month, day)
-        return x
 
 # Function to get current_date
 def get_date_today():
         today = date.today()
         return today
 
-# Function to initialize start date
-def initialize_start_date(year, month, day):
-        start_date = datetime.date(year, month, day)
-        return start_date
-
-# Function to get day number
-def get_day_number(start_date, today = get_date_today()):
-        return (today - start_date)
-
 # Function to format date for printing
 def format_date(date):
         return date.strftime("%B %d, %Y")
 
-current_date = format_date(get_date_today())
-num_days = get_day_number(initialize_start_date(2023,12,23)).days
 
-#print(current_date)
-#print("Day ", num_days)
+### SECTION INFO ###
 
 def get_section_list(trail_data):
         df = pd.read_csv(trail_data)
@@ -47,6 +56,7 @@ def get_mile_list(trail_data):
         return mile_list
 
 ### MILES COMPLETED ###
+
 def percent_completed(current_mile, trail_data):
         df = pd.DataFrame(columns=["Section", "Total Miles", "Completed Miles", "Percent Complete"], dtype='string')
         section_list = get_section_list(trail_data)
@@ -65,4 +75,6 @@ def percent_completed(current_mile, trail_data):
                 new_row = {"Section": section, "Total Miles": section_length, "Completed Miles": completed_miles, "Percent Complete": percent_complete}
                 df = pd.concat([df if not df.empty else None, pd.DataFrame([new_row])], ignore_index=True)
         df["Percent Complete"] = df["Percent Complete"].map('{:.1%}'.format)
-        return df       
+        return df    
+
+  
