@@ -1,4 +1,4 @@
-# thru-hike-tracker
+# Thru-Hike Tracker
 
 (Still in progress) 
 
